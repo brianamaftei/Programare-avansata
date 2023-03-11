@@ -1,4 +1,4 @@
-# AdvancedProgramming - Lab 2
+# AdvancedProgramming - Lab 3
 
 ## Compulsory
 
