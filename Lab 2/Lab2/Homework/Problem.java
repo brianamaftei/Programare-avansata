@@ -16,6 +16,7 @@ public class Problem {
 
     /**
      * It increments the number of roads and in the same time assigns the roads vector at that index with a given road
+     *
      * @param road is a given road from the main class
      */
     public void addRoad(Road road) {
@@ -24,6 +25,7 @@ public class Problem {
 
     /**
      * It increments the number of locations and assigns the locations vector at that index with a given road
+     *
      * @param location is a given location from the main class
      */
 
@@ -33,6 +35,7 @@ public class Problem {
 
     /**
      * euclideanDistance calculate the shortest distance between 2 locations
+     *
      * @param road will be a road from the roads vector based on the requirements
      * @return the euclidean distance calculated with a mathematical formula
      */
@@ -58,12 +61,13 @@ public class Problem {
     /**
      * Here the code goes through the locations and verify if it exists one identical with another
      * In the second for it starts from the next index to minimize the number of comparisons
+     *
      * @return if all the locations are different returns true, false otherwise
      */
 
     public boolean isValid() {
         int i, j;
-        for (i = 0; i < locationsCount - 1; i++) {
+        for (i = 0; i < locationsCount; i++) {
             for (j = i + 1; j < locationsCount; j++) {
                 if (locations[i].equals(locations[j])) {
                     return false;
@@ -72,7 +76,7 @@ public class Problem {
         }
 
         for (i = 0; i < roadsCount; i++) {
-            if (isEuclideanDistance(roads[i])) {
+            if (!isEuclideanDistance(roads[i])) {
                 return false;
             }
             for (j = i + 1; j < roadsCount; j++) {
@@ -83,6 +87,7 @@ public class Problem {
         }
         return true;
     }
+
     public Problem(int roadsNumber, int locationsNumber) {
         this.locations = new Location[locationsNumber];
         this.roads = new Road[roadsNumber];
@@ -123,7 +128,6 @@ public class Problem {
     }
 
     /**
-     *
      * @param location the location we are looking for in the vector
      * @return returns the position in the locations[] array of a specified location
      */
@@ -137,31 +141,29 @@ public class Problem {
     }
 
     /**
-     *
      * @param start starting location for which we create an adjacency list
      * @return returns the adjacency list for the starting location. The list is stored as an array of roads.
      */
     public Road[] initializeAdjacencyList(Location start) {
-        Road[] adjancencyList = new Road[roadsCount];
+        Road[] adjacencyList = new Road[roadsCount];
         int i, counter;
         counter = 0;
         for (i = 0; i < roadsCount; i++) {
             if (start.equals(roads[i].getStart())) {
-                adjancencyList[counter] = roads[i];
+                adjacencyList[counter] = roads[i];
                 counter++;
             }
         }
-        return adjancencyList;
+        return adjacencyList;
     }
 
     /**
-     *
      * @param start starting location for a DFS
-     * @param end end location for the DFS
+     * @param end   end location for the DFS
      * @return returns true if the two locations have a path connecting them, false if not
      */
     public boolean existsAPath(Location start, Location end) {
-        boolean visited[] = new boolean[locationsCount];
+        boolean[] visited = new boolean[locationsCount];
         LinkedList<Location> queue = new LinkedList<>();
         queue.add(start);
         while (!queue.isEmpty()) {
@@ -170,12 +172,12 @@ public class Problem {
                 return true;
             }
 
-            Road[] adjancencyList = initializeAdjacencyList(startLocation);
-            for (Road road : adjancencyList) {
+            Road[] adjacencyList = initializeAdjacencyList(startLocation);
+            for (Road road : adjacencyList) {
                 Location endLocation = road.getEnd();
                 int position;
                 position = getPositionOfLocation(endLocation);
-                if (visited[position] == false) {
+                if (!visited[position]) {
                     queue.add(endLocation);
                     visited[position] = true;
                 }
@@ -183,7 +185,7 @@ public class Problem {
 
         }
 
-            return false;
+        return false;
     }
 
     /**
@@ -207,6 +209,4 @@ public class Problem {
             System.out.println("There are no roads added");
         }
     }
-
-
 }

@@ -2,6 +2,7 @@ package Lab2.Compulsory;
 
 /**
  * The Road class with his constructors, getters, setters, the equals method and the method overriding
+ *
  */
 public class Road {
     protected RoadType type;
