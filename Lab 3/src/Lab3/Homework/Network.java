@@ -1,15 +1,13 @@
 package Lab3.Homework;
 
 import Lab3.Compulsory.Node;
-import Lab3.Compulsory.Person;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Network {
-    private List<Node> nodes = new ArrayList<>();
+    private final List<Node> nodes = new ArrayList<>();
     public Network() {
     }
 
@@ -17,20 +15,15 @@ public class Network {
         return nodes;
     }
 
-    public void setNodes(List<Node> nodes) {
-        this.nodes = nodes;
-    }
-
-
     public void addNode(Node node) {
         nodes.add(node);
     }
 
     /**
-     * In the first part we calculate in contor the number of the vertexes which start from the given node and in duplicate
+     * In the first part we calculate in contour the number of the vertexes which start from the given node and in duplicate
      * we stock the ones that ends in the given node
      * Moving on we increase the counter by going through the all nodes and finding vertexes starting from them and ending in the given node
-     * After that we eliminate the duplicate vertexes from the contor
+     * After that we eliminate the duplicate vertexes from the contour
      * @param node the given node
      * @return returns the number of connections between a node and his neighbours without duplicates
      */

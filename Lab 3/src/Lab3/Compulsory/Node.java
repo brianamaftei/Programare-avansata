@@ -6,7 +6,7 @@ import java.util.Map;
  * Interface for Company and Person
  */
 public interface Node {
-    String getName();
+    String name();
 
     Map<Node, String> getRelationships();
 }

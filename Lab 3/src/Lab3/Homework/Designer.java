@@ -7,7 +7,7 @@ import Lab3.Compulsory.Person;
  */
 public class Designer extends Person {
     //this attribute contain the name of the program that one designer uses
-    private String prototypingTool;
+    private final String prototypingTool;
 
     public Designer(String name, Date birthDate, String prototypingTool) {
         super(name, birthDate);

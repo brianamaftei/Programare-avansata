@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         List<Node> nodes = new ArrayList<>();
-        Person p1 = new Person("Aladin");
+        Person p1 = new Person("Aladdin");
         Company c1 = new Company("Amazon");
 
         nodes.add(p1);

@@ -4,13 +4,12 @@ import Lab3.Compulsory.Person;
 
 public class Programmer extends Person {
 
-    private String skilledProgrammingLanguage;
+    private final String skilledProgrammingLanguage;
 
     public Programmer(String name, Date birthDate, String programmingLanguage) {
         super(name, birthDate);
         this.skilledProgrammingLanguage = programmingLanguage;
     }
-
 
     @Override
     public String toString() {

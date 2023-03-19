@@ -23,18 +23,16 @@ public class Person implements Node, Comparable<Person> {
     }
 
     @Override
-    public String getName() {
+    public String name() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
 
     @Override
     public int compareTo(Person other) {
-        if (other instanceof Person) return this.name.compareTo(other.name);
+        if (other != null) {
+            return this.name.compareTo(other.name);
+        }
         else return -1;
     }
 
@@ -42,38 +40,25 @@ public class Person implements Node, Comparable<Person> {
         relationships.put(node, value);
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
     public Map<Node, String> getRelationships() {
         return relationships;
     }
 
-    public void setRelationships(Map<Node, String> relationships) {
-        this.relationships = relationships;
-    }
-
     /**
-     *
      * @return returns a string that is the concatenation of all the nodes in this person's relationships
      */
 
     public String printRelationships() {
-        String response = "";
-        if (!relationships.isEmpty()) response = response + ", relationships=";
-        else response = response + ", no relationship";
+        StringBuilder response = new StringBuilder();
+        if (!relationships.isEmpty()) response.append(", relationships=");
+        else response.append(", no relationship");
 
         for (var entry : relationships.entrySet()) {
-            response = response + " '";
-            response = response + entry.getKey().getName();
-            response = response + " - " + entry.getValue() + "'";
+            response.append(" '");
+            response.append(entry.getKey().name());
+            response.append(" - ").append(entry.getValue()).append("'");
         }
-        return response;
+        return response.toString();
     }
 
     @Override
@@ -83,11 +68,10 @@ public class Person implements Node, Comparable<Person> {
 
     public boolean equals(Object obj) {
 
-        if (!(obj instanceof Person)) {
+        if (!(obj instanceof Person other)) {
             return false;
         }
 
-        Person other = (Person) obj;
         return this.name.equals(other.name) && this.getClass() == other.getClass();
     }
 

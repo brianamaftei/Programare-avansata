@@ -1,11 +1,6 @@
 package Lab3.Homework;
 
 import Lab3.Compulsory.Company;
-import Lab3.Compulsory.Node;
-import Lab3.Compulsory.Person;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +8,7 @@ public class Main {
         Network network = new Network();
         Designer d1 = new Designer("Jafar", new Date(23, 4, 2002), "Framer");
         Designer d2 = new Designer("Sultan", new Date(22, 3, 1965), "Framer");
-        Programmer p1 = new Programmer("Aladin", new Date(13, 12, 1991), "C++");
+        Programmer p1 = new Programmer("Aladdin", new Date(13, 12, 1991), "C++");
         Programmer p2 = new Programmer("Jasmine", new Date(15, 1, 1994), "Java");
         Company c1 = new Company("Amazon");
 
@@ -21,6 +16,7 @@ public class Main {
         network.addNode(p2);
         network.addNode(d1);
         network.addNode(d2);
+        network.addNode(c1);
 
         d1.addRelationship(p1, "best-friends");
         p2.addRelationship(p1, "marriage");
