@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>$name</h1>
+        <ul>
+            #foreach( $document in $documents )
+                <li>$document</li>
+            #end
+        </ul>
+    </body>
+</html>

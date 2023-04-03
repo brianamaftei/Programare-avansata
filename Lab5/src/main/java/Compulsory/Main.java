@@ -1,7 +1,11 @@
 package Compulsory;
 
+import Compulsory.Catalog.Catalog;
+import Compulsory.Catalog.CatalogUtil;
+import Compulsory.Document.Document;
+
 public class Main {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Main app = new Main();
         app.testCreateSave();
         app.testLoadView();
@@ -10,7 +14,7 @@ public class Main {
     private void testCreateSave() {
         Catalog catalog = new Catalog("MyDocuments");
         var book = new Document("article1", "Destinations To Visit in Your Lifetime");
-        var book1 = new Document("article2", "Destinations");
+        var book1 = new Document("article2", "Destinations", "Location2", "23/12/2022");
         var article = new Document("book1", "The Flavor Bible");
         catalog.add(book);
         catalog.add(book1);
@@ -21,6 +25,7 @@ public class Main {
         } catch (java.io.IOException exception) {
             System.out.println("There is a problem with the saving process");
         }
+
     }
 
     private void testLoadView() {
