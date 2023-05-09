@@ -6,13 +6,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AlbumDAO {
+    private final Connection connection;
+
+    public AlbumDAO(Connection connection) {
+        this.connection = connection;
+    }
+
     public void create(int releaseYear, String title, String artist, String genresString) throws SQLException {
-        Connection con = Database.getConnection();
-        try (PreparedStatement pstmt = con.prepareStatement(
-                "INSERT INTO albums (release_year, title, artist) VALUES (?, ?, ?)")) {
-            pstmt.setInt(1, releaseYear);
-            pstmt.setString(2, title);
-            pstmt.setString(3, artist);
+        try (PreparedStatement pstmt = connection.prepareStatement("INSERT INTO albums (title, artist_name, year) VALUES (?, ?, ?)")) {
+            pstmt.setString(1, title);
+            pstmt.setString(2, artist);
+            pstmt.setInt(3, releaseYear);
             pstmt.executeUpdate();
         }
 
@@ -20,8 +24,7 @@ public class AlbumDAO {
         int albumId = findAlbumIdByTitle(title);
         if (albumId != -1) {
             String[] genres = genresString.split(",");
-            try (PreparedStatement pstmt = con.prepareStatement(
-                    "INSERT INTO album_genres (album_id, genre_id) VALUES (?, ?)")) {
+            try (PreparedStatement pstmt = connection.prepareStatement("INSERT INTO album_genres (album_id, genre_id) VALUES (?, ?)")) {
                 for (String genre : genres) {
                     int genreId = findOrCreateGenreIdByName(genre.trim());
                     pstmt.setInt(1, albumId);
@@ -33,9 +36,7 @@ public class AlbumDAO {
     }
 
     public int findAlbumIdByTitle(String title) throws SQLException {
-        Connection con = Database.getConnection();
-        try (PreparedStatement pstmt = con.prepareStatement(
-                "SELECT id FROM albums WHERE title = ?")) {
+        try (PreparedStatement pstmt = connection.prepareStatement("SELECT id FROM albums WHERE title = ?")) {
             pstmt.setString(1, title);
             try (ResultSet rs = pstmt.executeQuery()) {
                 return rs.next() ? rs.getInt("id") : -1;
@@ -44,18 +45,13 @@ public class AlbumDAO {
     }
 
     public int findOrCreateGenreIdByName(String name) throws SQLException {
-        Connection con = Database.getConnection();
-        try (PreparedStatement pstmt = con.prepareStatement(
-                "SELECT id FROM genres WHERE name = ?")) {
+        try (PreparedStatement pstmt = connection.prepareStatement("SELECT id FROM genres WHERE name = ?")) {
             pstmt.setString(1, name);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     return rs.getInt("id");
                 } else {
-                    // Genre does not exist, create a new genre
-                    try (PreparedStatement insertPstmt = con.prepareStatement(
-                            "INSERT INTO genres (name) VALUES (?)",
-                            PreparedStatement.RETURN_GENERATED_KEYS)) {
+                    try (PreparedStatement insertPstmt = connection.prepareStatement("INSERT INTO genres (name) VALUES (?)", PreparedStatement.RETURN_GENERATED_KEYS)) {
                         insertPstmt.setString(1, name);
                         insertPstmt.executeUpdate();
                         try (ResultSet generatedKeys = insertPstmt.getGeneratedKeys()) {

@@ -1,23 +1,36 @@
 package Compulsory;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
 import java.sql.*;
 
 public class Database {
     private static final String URL = "jdbc:postgresql://localhost:5432/albums";
     private static final String USER = "postgres";
     private static final String PASSWORD = "password";
-    private static Connection connection = null;
+    private static final HikariDataSource dataSource;
+
+    static {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl(URL);
+        config.setUsername(USER);
+        config.setPassword(PASSWORD);
+
+        config.setMaximumPoolSize(100);
+        config.setAutoCommit(false);
+
+        dataSource = new HikariDataSource(config);
+    }
 
     private Database() {
     }
 
-    public static Connection getConnection() {
-        if (connection == null) {
-            createConnection();
-        }
-        return connection;
+    public static Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
     }
-    public static void printTables() throws SQLException {
+
+    public static void printTables(Connection connection) throws SQLException {
         DatabaseMetaData metaData = connection.getMetaData();
         String[] tableTypes = {"TABLE"};
         ResultSet tables = metaData.getTables(null, null, null, tableTypes);
@@ -38,22 +51,15 @@ public class Database {
             System.out.println();
         }
     }
+
     public static void rollback() {
         try {
+            Connection connection = getConnection();
             if (connection != null) {
                 connection.rollback();
             }
         } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-    }
-
-    private static void createConnection() {
-        try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            connection.setAutoCommit(false);
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 }

@@ -4,8 +4,13 @@ import java.sql.*;
 
 public class GenreDAO {
 
+    private final Connection connection;
+
+    public GenreDAO(Connection connection) {
+        this.connection = connection;
+    }
+
     public void create(String name) throws SQLException {
-        Connection connection = Database.getConnection();
         try (PreparedStatement pstmt = connection.prepareStatement(
                 "insert into genres (name) values (?)")) {
             pstmt.setString(1, name);
@@ -14,7 +19,6 @@ public class GenreDAO {
     }
 
     public Integer findByName(String name) throws SQLException {
-        Connection connection = Database.getConnection();
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(
                      "select id from genres where name='" + name + "'")) {
@@ -23,8 +27,7 @@ public class GenreDAO {
     }
 
     public String findById(int id) throws SQLException {
-        Connection con = Database.getConnection();
-        try (PreparedStatement pstmt = con.prepareStatement(
+        try (PreparedStatement pstmt = connection.prepareStatement(
                 "select name from genres where id = ?")) {
             pstmt.setInt(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {

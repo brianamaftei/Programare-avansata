@@ -1,0 +1,101 @@
+Number,Year,Album,Artist,Genre,Subgenre
+1,1967,Sgt. Pepper's Lonely Hearts Club Band,The Beatles,Rock,"Rock & Roll, Psychedelic Rock"
+2,1966,Pet Sounds,The Beach Boys,Rock,"Pop Rock, Psychedelic Rock"
+3,1966,Revolver,The Beatles,Rock,"Psychedelic Rock, Pop Rock"
+4,1965,Highway 61 Revisited,Bob Dylan,Rock,"Folk Rock, Blues Rock"
+5,1965,Rubber Soul,The Beatles,"Rock, Pop",Pop Rock
+6,1971,What's Going On,Marvin Gaye,Funk / Soul,Soul
+7,1972,Exile on Main St.,The Rolling Stones,Rock,"Blues Rock, Rock & Roll, Classic Rock"
+8,1979,London Calling,The Clash,Rock,"Punk, New Wave"
+9,1966,Blonde on Blonde,Bob Dylan,"Rock, Blues","Folk Rock, Rhythm & Blues"
+10,1968,"The Beatles (""The White Album"")",The Beatles,Rock,"Rock & Roll, Pop Rock, Psychedelic Rock, Experimental"
+11,1976,The Sun Sessions,Elvis Presley,Rock,Rock & Roll
+12,1959,Kind of Blue,Miles Davis,Jazz,Modal
+13,1967,The Velvet Underground & Nico,The Velvet Underground,Rock,"Garage Rock, Art Rock, Experimental"
+14,1969,Abbey Road,The Beatles,Rock,"Psychedelic Rock, Classic Rock, Pop Rock"
+15,1967,Are You Experienced,The Jimi Hendrix Experience,"Rock, Blues","Blues Rock, Psychedelic Rock"
+16,1975,Blood on the Tracks,Bob Dylan,Rock,"Folk Rock, Acoustic, Ballad"
+17,1991,Nevermind,Nirvana,Rock,"Alternative Rock, Grunge"
+18,1975,Born to Run,Bruce Springsteen,Rock,Pop Rock
+19,1968,Astral Weeks,Van Morrison,"Jazz, Rock, Blues, Folk, World, & Country","Acoustic, Classic Rock, Free Improvisation"
+20,1982,Thriller,Michael Jackson,"Funk / Soul, Pop",Disco
+21,1982,The Great Twenty_Eight,Chuck Berry,Rock,Rock & Roll
+22,1990,The Complete Recordings,Robert Johnson,Blues,Delta Blues
+23,1970,John Lennon/Plastic Ono Band,John Lennon / Plastic Ono Band,Rock,Pop Rock
+24,1973,Innervisions,Stevie Wonder,Funk / Soul,Soul
+25,1963,"Live at the Apollo, 1962",James Brown,Funk / Soul,"Rhythm & Blues, Soul"
+26,1977,Rumours,Fleetwood Mac,Rock,Pop Rock
+27,1987,The Joshua Tree,U2,Rock,"Alternative Rock, Pop Rock"
+28,1971,Who's Next,The Who,Rock,"Hard Rock, Mod, Prog Rock, Psychedelic Rock"
+29,1969,Led Zeppelin,Led Zeppelin,Rock,"Blues Rock, Hard Rock"
+30,1971,Blue,Joni Mitchell,Pop,"Acoustic, Ballad, Folk"
+31,1965,Bringing It All Back Home,Bob Dylan,"Rock, Folk, World, & Country","Folk Rock, Folk"
+32,1969,Let It Bleed,The Rolling Stones,Rock,"Blues Rock, Hard Rock"
+33,1976,Ramones,Ramones,Rock,"Rock & Roll, Punk"
+34,1968,Music From Big Pink,The Band,Rock,"Folk Rock, Acoustic, Blues Rock"
+35,1972,The Rise and Fall of Ziggy Stardust and the Spiders From Mars,David Bowie,Rock,"Classic Rock, Glam"
+36,1971,Tapestry,Carole King,"Rock, Pop","Folk Rock, Soft Rock"
+37,1976,Hotel California,Eagles,Rock,Classic Rock
+38,2001,The Anthology,Muddy Waters,"Folk, World, & Country",Folk
+39,1963,Please Please Me,The Beatles,Rock,"Beat, Rock & Roll"
+40,1967,Forever Changes,Love,Rock,"Folk Rock, Psychedelic Rock"
+41,1977,Never Mind the Bollocks Here's the Sex Pistols,Sex Pistols,Rock,Punk
+42,1967,The Doors,The Doors,Rock,Psychedelic Rock
+43,1973,The Dark Side of the Moon,Pink Floyd,Rock,Prog Rock
+44,1975,Horses,Patti Smith,Rock,Art Rock
+45,1969,"The Band (""The Brown Album"")",The Band,"Classical, Stage & Screen","Soundtrack, Modern Classical, Contemporary, Score"
+46,1984,Legend: The Best of Bob Marley and The Wailers,Bob Marley & The Wailers,Reggae,"Reggae, Roots Reggae"
+47,1965,A Love Supreme,John Coltrane,Jazz,"Free Jazz, Hard Bop, Modal"
+48,1988,It Takes a Nation of Millions to Hold Us Back,Public Enemy,Hip Hop,Conscious
+49,1971,At Fillmore East,The Allman Brothers Band,"Rock, Blues",Blues Rock
+50,1957,Here's Little Richard,Little Richard,"Rock, Blues","Rock & Roll, Rhythm & Blues"
+51,1970,Bridge Over Troubled Water,Simon & Garfunkel,Rock,"Folk Rock, Classic Rock"
+52,1975,Greatest Hits,Al Green,Funk / Soul,Soul
+53,1964,Meet The Beatles!,The Beatles,Rock,"Beat, Rock & Roll"
+54,1991,The Birth of Soul,Ray Charles,"Jazz, Funk / Soul","Rhythm & Blues, Big Band, Soul, Soul-Jazz"
+55,1968,Electric Ladyland,The Jimi Hendrix Experience,"Rock, Blues","Electric Blues, Psychedelic Rock"
+56,1956,Elvis Presley,Elvis Presley,Rock,"Rock & Roll, Rockabilly"
+57,1976,Songs in the Key of Life,Stevie Wonder,Funk / Soul,"Soul, Disco"
+58,1968,Beggars Banquet,The Rolling Stones,"Rock, Funk / Soul, Pop","Blues Rock, Southern Rock, Classic Rock"
+59,1976,Chronicle: The 20 Greatest Hits,Creedence Clearwater Revival,Rock,None
+60,1969,Trout Mask Replica,Captain Beefheart & His Magic Band,"Rock, Blues","Dialogue, Field Recording, Avantgarde, Electric Blues, Psychedelic Rock, Experimental"
+61,1970,Greatest Hits,Sly & The Family Stone,Funk / Soul,"Rhythm & Blues, Funk"
+62,1987,Appetite for Destruction,Guns N' Roses,Rock,"Hard Rock, Heavy Metal"
+63,1991,Achtung Baby,U2,"Electronic, Rock","Pop Rock, Synth-pop, Alternative Rock, Arena Rock"
+64,1971,Sticky Fingers,The Rolling Stones,Rock,Classic Rock
+65,1991,Back to Mono (1958-1969),Phil Spector,"Rock, Funk / Soul, Pop","Doo Wop, Pop Rock, Ballad, Rhythm & Blues"
+66,1970,Moondance,Van Morrison,"Jazz, Rock, Funk / Soul, Folk, World, & Country","Folk Rock, Rhythm & Blues, Classic Rock, Contemporary Jazz"
+67,2000,Kid A,Radiohead,"Electronic, Rock","Alternative Rock, IDM, Experimental"
+68,1979,Off the Wall,Michael Jackson,"Funk / Soul, Pop","Disco, Soul, Ballad"
+69,1971,[Led Zeppelin IV],Led Zeppelin,Rock,"Hard Rock, Classic Rock, Blues Rock"
+70,1977,The Stranger,Billy Joel,Rock,Pop Rock
+71,1986,Graceland,Paul Simon,"Jazz, Rock, Funk / Soul, Pop, Folk, World, & Country","Folk Rock, Pop Rock, African, Afrobeat, Zydeco, Funk, Rhythm & Blues"
+72,1972,Superfly,Curtis Mayfield,"Funk / Soul, Stage & Screen","Soundtrack, Soul"
+73,1975,Physical Graffiti,Led Zeppelin,Rock,Classic Rock
+74,1970,After the Gold Rush,Neil Young,Rock,"Rock & Roll, Country Rock"
+75,1991,Star Time,James Brown,Funk / Soul,"Soul, Funk, Disco"
+76,1984,Purple Rain,Prince and the Revolution,"Electronic, Rock, Funk / Soul, Stage & Screen","Pop Rock, Funk, Soundtrack, Synth-pop"
+77,1980,Back in Black,AC/DC,Rock,Hard Rock
+78,1965,Otis Blue: Otis Redding Sings Soul,Otis Redding,Funk / Soul,Soul
+79,1969,Led Zeppelin II,Led Zeppelin,Rock,"Blues Rock, Classic Rock, Hard Rock"
+80,1971,Imagine,John Lennon,Rock,Pop Rock
+81,1977,The Clash,The Clash,Rock,Punk
+82,1972,Harvest,Neil Young,Rock,"Folk Rock, Country Rock, Classic Rock"
+83,1967,Axis: Bold as Love,The Jimi Hendrix Experience,Rock,"Psychedelic Rock, Electric Blues"
+84,1967,I Never Loved a Man the Way I Love You,Aretha Franklin,Funk / Soul,Soul
+85,1968,Lady Soul,Aretha Franklin,Funk / Soul,Soul
+86,1984,Born in the U.S.A.,Bruce Springsteen,Rock,Pop Rock
+87,1979,The Wall,Pink Floyd,Rock,"Alternative Rock, Prog Rock"
+88,1968,At Folsom Prison,Johnny Cash,"Folk, World, & Country",Country
+89,1969,Dusty in Memphis,Dusty Springfield,"Rock, Funk / Soul","Pop Rock, Soul"
+90,1972,Talking Book,Stevie Wonder,Funk / Soul,"Soul, Funk"
+91,1973,Goodbye Yellow Brick Road,Elton John,Rock,"Pop Rock, Classic Rock"
+92,1978,20 Golden Greats,Buddy Holly,Rock,Rock & Roll
+93,1987,"Sign ""Peace"" the Times",Prince,"Rock, Reggae","Ska, Reggae-Pop"
+94,1984,40 Greatest Hits,Hank Williams,"Folk, World, & Country",Country
+95,1970,Bitches Brew,Miles Davis,Jazz,Fusion
+96,1969,Tommy,The Who,Rock,Psychedelic Rock
+97,1963,The Freewheelin' Bob Dylan,Bob Dylan,"Folk, World, & Country",Folk
+98,1978,This Year's Model,Elvis Costello,Rock,New Wave
+99,1971,There's a Riot Goin' On,Sly & The Family Stone,Funk / Soul,"Rhythm & Blues, Funk"
+100,1968,Odessey and Oracle,The Zombies,Rock,Psychedelic Rock
