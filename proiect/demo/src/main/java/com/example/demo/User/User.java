@@ -47,6 +47,8 @@ public class User implements UserDetails {
 
     @Transient
     private Integer age;
+    private Boolean locked;
+    private Boolean enabled;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
