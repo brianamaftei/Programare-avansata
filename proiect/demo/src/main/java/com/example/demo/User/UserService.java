@@ -25,7 +25,7 @@ public class UserService {
     }
 
     public void addNewUser(User user) {
-        Optional<User> userOptional = userRepository.findUserByEmail(user.getEmail());
+        Optional<User> userOptional = userRepository.findByEmail(user.getEmail());
         if (userOptional.isPresent()) {
             throw new IllegalStateException("email adress already used");
         }
@@ -47,7 +47,7 @@ public class UserService {
         User user = userRepository.findById(userId).orElseThrow(
                 () -> new IllegalStateException("user " + userId + " doesn't exist"));
 
-        if(name!=null && name.length()>0 && !Objects.equals(user.getName(), name)){
+        if(name!=null && name.length()>0 && !Objects.equals(user.getFirstname(), name)){
             user.setName(name);
         }
 

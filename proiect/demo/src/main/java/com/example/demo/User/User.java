@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 //@Entity
 //@Table(name = "users")
-public class User  implements UserDetails {
+public class User implements UserDetails {
 @Id
 @GeneratedValue //automat by default
 //@SequenceGenerator(
@@ -94,10 +94,10 @@ public class User  implements UserDetails {
 //        return name;
 //    }
 //
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
+    public void setName(String firstname) {
+        this.firstname = firstname;
+    }
+
 //    public String getEmail() {
 //        return email;
 //    }
