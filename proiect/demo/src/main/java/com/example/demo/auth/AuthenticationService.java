@@ -19,6 +19,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder().firstname(request.getFirstname()).lastname(request.getLastname()).
                 email(request.getEmail()).password(passwordEncoder.encode(request.getPassword())).
@@ -32,14 +33,15 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-       authenticationManager.authenticate(
-               new UsernamePasswordAuthenticationToken(
-                       request.getEmail(),
-                       request.getPassword()
-               )
-       );
-       var user repository.findByEmail(request.getEmail()).orElseThrow()orElseThrow();
-
-
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getEmail(),
+                        request.getPassword()
+                )
+        );
+        var user = repository.findByEmail(request.getEmail()).orElseThrow();
+        var jwtToken = jwtService.generateToken(user);
+        return AuthenticationResponse.builder().
+                token(jwtToken).build();
     }
 }

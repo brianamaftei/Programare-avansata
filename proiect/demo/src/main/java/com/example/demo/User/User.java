@@ -15,11 +15,11 @@ import java.util.Collection;
 import java.util.List;
 
 @Data
-@Builder //e design pattern care ajuta in contruirea obiectului intr-un mod mai usor
+@Builder //e design pattern care ajuta in construirea obiectului intr-un mod mai usor
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
-//@Table(name = "users")
+@Entity
+@Table(name = "users")
 public class User implements UserDetails {
 @Id
 @GeneratedValue //automat by default
@@ -28,9 +28,9 @@ public class User implements UserDetails {
 //        name="user_sequence",
 //        sequenceName="user_sequence",
 //        allocationSize=1
-////)
+//)
 //@GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "user_sequence")
-//
+
     private Long id;
     private String firstname;
 

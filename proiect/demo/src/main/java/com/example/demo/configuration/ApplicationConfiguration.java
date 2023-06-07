@@ -1,5 +1,6 @@
 package com.example.demo.configuration;
 
+import com.example.demo.User.User;
 import com.example.demo.User.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -24,16 +25,17 @@ public class ApplicationConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return username -> repository.findbyEmail(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+        return username -> repository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
         //dacanu gasim userul avem throwul
     }
 
     @Bean
     public AuthenticationProvider authenticationProvider(){
-        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-        authenticationProvider.setUserDetailsService(userDetailsService());
-        authenticationProvider.setPasswordEncoder(passwordEncoder());
-        return authenticationProvider;
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService());
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
     }
 
     @Bean

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Laborator9/Laborator9.iml" filepath="$PROJECT_DIR$/Laborator9/Laborator9.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Programare-avansata.iml" filepath="$PROJECT_DIR$/.idea/Programare-avansata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proiect/demo/demo.iml" filepath="$PROJECT_DIR$/proiect/demo/demo.iml" />
     </modules>
   </component>
 </project>
