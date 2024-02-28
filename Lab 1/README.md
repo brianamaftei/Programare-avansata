@@ -4,7 +4,7 @@
 
 -----
 
-- [x] Display on the screen the message Hello World!. Run the application. If it works, go to step 2 )
+- [ ] Display on the screen the message Hello World!. Run the application. If it works, go to step 2 )
 - [x] Define an array of strings languages, containing {C, C++, C#, Python, Go, Rust, JavaScript, PHP, Swift, Java}
 - [x] Generate a random integer n int n = (int) (Math.random()  1_000_000);
 - [x] Compute the result obtained after performing the following calculations...
